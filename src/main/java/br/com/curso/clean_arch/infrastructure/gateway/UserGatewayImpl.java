@@ -2,7 +2,8 @@ package br.com.curso.clean_arch.infrastructure.gateway;
 
 import br.com.curso.clean_arch.application.gateway.user.UserGateway;
 import br.com.curso.clean_arch.core.entitites.User;
-import br.com.curso.clean_arch.core.enums.UserRole;
+import br.com.curso.clean_arch.infrastructure.exception.EntityAlreayExists;
+import br.com.curso.clean_arch.infrastructure.exception.EntityNotFoundException;
 import br.com.curso.clean_arch.infrastructure.mappers.UserEntityMapper;
 import br.com.curso.clean_arch.infrastructure.persistence.model.UserEntity;
 import br.com.curso.clean_arch.infrastructure.persistence.repository.UserRepository;
@@ -21,6 +22,10 @@ public class UserGatewayImpl implements UserGateway {
 
     @Override
     public User create(User user) {
+        Optional<UserEntity> userByEmail = userRepository.findUserByEmail(user.email());
+        if(userByEmail.isPresent()) {
+            throw new EntityAlreayExists("Usuario com email %s já existe.".formatted(user.email()));
+        }
         UserEntity userSaved = userRepository.save(userEntityMapper.toEntity(user));
         return userEntityMapper.toDomain(userSaved);
     }
@@ -29,7 +34,7 @@ public class UserGatewayImpl implements UserGateway {
     public User findById(Long id) {
         return userRepository.findById(id)
                 .map(userEntityMapper::toDomain)
-                .orElseThrow(() -> new IllegalArgumentException("Usuario não encontrado."));
+                .orElseThrow(() -> new EntityNotFoundException("Usuario com id %d não encontrado.".formatted(id)));
     }
 
     @Override
