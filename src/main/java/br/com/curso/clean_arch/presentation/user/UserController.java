@@ -5,9 +5,9 @@ import br.com.curso.clean_arch.application.usecase.user.contract.DeleteUserUseCa
 import br.com.curso.clean_arch.application.usecase.user.contract.FindUserByIdUseCase;
 import br.com.curso.clean_arch.application.usecase.user.contract.UpdateUserUseCase;
 import br.com.curso.clean_arch.core.entitites.User;
-import br.com.curso.clean_arch.infrastructure.dtos.CreateUserRequest;
-import br.com.curso.clean_arch.infrastructure.dtos.UpdateUserRequest;
-import br.com.curso.clean_arch.infrastructure.dtos.UserResponse;
+import br.com.curso.clean_arch.infrastructure.dtos.user.CreateUserRequest;
+import br.com.curso.clean_arch.infrastructure.dtos.user.UpdateUserRequest;
+import br.com.curso.clean_arch.infrastructure.dtos.user.UserResponse;
 import br.com.curso.clean_arch.infrastructure.mappers.UpdateUserMapper;
 import br.com.curso.clean_arch.infrastructure.mappers.UserCreateMapper;
 import br.com.curso.clean_arch.infrastructure.mappers.UserResponseMapper;

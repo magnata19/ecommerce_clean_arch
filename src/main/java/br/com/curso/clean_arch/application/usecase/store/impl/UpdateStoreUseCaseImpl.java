@@ -23,7 +23,7 @@ public class UpdateStoreUseCaseImpl implements UpdateStoreUseCase {
                 store.name(),
                 store.description(),
                 store.cnpj(),
-                existingStore.ownerId(),
+                existingStore.owner(),
                 existingStore.createdAt(),
                 existingStore.updatedAt()
         ));

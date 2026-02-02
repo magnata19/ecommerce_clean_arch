@@ -1,4 +1,4 @@
-package br.com.curso.clean_arch.infrastructure.dtos;
+package br.com.curso.clean_arch.infrastructure.dtos.user;
 
 import br.com.curso.clean_arch.core.enums.UserRole;
 import com.fasterxml.jackson.annotation.JsonFormat;

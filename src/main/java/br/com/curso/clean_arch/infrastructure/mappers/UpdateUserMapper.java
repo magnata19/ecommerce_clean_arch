@@ -1,8 +1,8 @@
 package br.com.curso.clean_arch.infrastructure.mappers;
 
 import br.com.curso.clean_arch.core.entitites.User;
-import br.com.curso.clean_arch.infrastructure.dtos.UpdateUserRequest;
-import br.com.curso.clean_arch.infrastructure.dtos.UserResponse;
+import br.com.curso.clean_arch.infrastructure.dtos.user.UpdateUserRequest;
+import br.com.curso.clean_arch.infrastructure.dtos.user.UserResponse;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
