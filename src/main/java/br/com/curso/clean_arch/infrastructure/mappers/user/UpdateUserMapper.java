@@ -1,4 +1,4 @@
-package br.com.curso.clean_arch.infrastructure.mappers;
+package br.com.curso.clean_arch.infrastructure.mappers.user;
 
 import br.com.curso.clean_arch.core.entitites.User;
 import br.com.curso.clean_arch.infrastructure.dtos.user.UpdateUserRequest;

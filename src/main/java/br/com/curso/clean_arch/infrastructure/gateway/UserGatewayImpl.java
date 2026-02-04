@@ -4,7 +4,7 @@ import br.com.curso.clean_arch.application.gateway.user.UserGateway;
 import br.com.curso.clean_arch.core.entitites.User;
 import br.com.curso.clean_arch.infrastructure.exception.EntityAlreayExists;
 import br.com.curso.clean_arch.infrastructure.exception.EntityNotFoundException;
-import br.com.curso.clean_arch.infrastructure.mappers.UserEntityMapper;
+import br.com.curso.clean_arch.infrastructure.mappers.user.UserEntityMapper;
 import br.com.curso.clean_arch.infrastructure.persistence.model.UserEntity;
 import br.com.curso.clean_arch.infrastructure.persistence.repository.UserRepository;
 

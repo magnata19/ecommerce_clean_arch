@@ -10,7 +10,7 @@ import br.com.curso.clean_arch.application.usecase.user.impl.DeleteUserUseCaseIm
 import br.com.curso.clean_arch.application.usecase.user.impl.FindUserByIdUseCaseImpl;
 import br.com.curso.clean_arch.application.usecase.user.impl.UpdateUserUseCaseImpl;
 import br.com.curso.clean_arch.infrastructure.gateway.UserGatewayImpl;
-import br.com.curso.clean_arch.infrastructure.mappers.UserEntityMapper;
+import br.com.curso.clean_arch.infrastructure.mappers.user.UserEntityMapper;
 import br.com.curso.clean_arch.infrastructure.persistence.repository.UserRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
