@@ -14,13 +14,14 @@ import br.com.curso.clean_arch.infrastructure.mappers.user.UserEntityMapper;
 import br.com.curso.clean_arch.infrastructure.persistence.repository.UserRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
 public class UserBeanConfiguration {
 
     @Bean
-    public UserGateway userGateway(UserRepository userRepository, UserEntityMapper userEntityMapper){
-        return new UserGatewayImpl(userRepository, userEntityMapper);
+    public UserGateway userGateway(UserRepository userRepository, UserEntityMapper userEntityMapper, PasswordEncoder encoder, PasswordEncoder passwordEncoder){
+        return new UserGatewayImpl(userRepository, userEntityMapper, passwordEncoder);
     }
 
     @Bean

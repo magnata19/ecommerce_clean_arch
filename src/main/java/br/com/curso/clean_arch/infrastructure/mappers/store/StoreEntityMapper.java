@@ -26,7 +26,7 @@ public class StoreEntityMapper {
                 .name(store.name())
                 .description(store.description())
                 .cnpj(store.cnpj())
-                .owner(new UserEntity())
+                .owner(UserEntity.builder().id(store.owner()).build())
                 .createdAt(store.createdAt())
                 .updatedAt(store.updatedAt())
                 .build();

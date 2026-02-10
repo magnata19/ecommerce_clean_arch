@@ -27,7 +27,7 @@ public class StoreEntity {
     @Column(nullable = false, length = 14, unique = true)
     private String cnpj;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne
     @JoinColumn(name = "owner_id", referencedColumnName = "id", nullable = false, unique = true)
     private UserEntity owner;
 

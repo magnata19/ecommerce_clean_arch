@@ -7,6 +7,7 @@ import br.com.curso.clean_arch.infrastructure.exception.EntityNotFoundException;
 import br.com.curso.clean_arch.infrastructure.mappers.user.UserEntityMapper;
 import br.com.curso.clean_arch.infrastructure.persistence.model.UserEntity;
 import br.com.curso.clean_arch.infrastructure.persistence.repository.UserRepository;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.Optional;
 
@@ -14,20 +15,20 @@ public class UserGatewayImpl implements UserGateway {
 
     private final UserRepository userRepository;
     private final UserEntityMapper userEntityMapper;
+    private final PasswordEncoder encoder;
 
-    public UserGatewayImpl(UserRepository userRepository, UserEntityMapper userEntityMapper) {
+    public UserGatewayImpl(UserRepository userRepository, UserEntityMapper userEntityMapper, PasswordEncoder encoder) {
         this.userRepository = userRepository;
         this.userEntityMapper = userEntityMapper;
+        this.encoder = encoder;
     }
 
     @Override
     public User create(User user) {
-        Optional<UserEntity> userByEmail = userRepository.findUserByEmail(user.email());
-        if(userByEmail.isPresent()) {
-            throw new EntityAlreayExists("Usuario com email %s já existe.".formatted(user.email()));
-        }
-        UserEntity userSaved = userRepository.save(userEntityMapper.toEntity(user));
-        return userEntityMapper.toDomain(userSaved);
+        UserEntity entity = userEntityMapper.toEntity(user);
+        entity.setPassword(encoder.encode(entity.getPassword()));
+        UserEntity saved = userRepository.save(entity);
+        return userEntityMapper.toDomain(saved);
     }
 
     @Override

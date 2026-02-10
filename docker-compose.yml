@@ -9,9 +9,9 @@ services:
       POSTGRES_PASSWORD: manager
       POSTGRES_DB: scheduling
     ports:
-      - '5432:5432'
+      - '5433:5432'
     volumes:
-      - data:/var/lib/postgresql/data
+      - data_pg:/var/lib/postgresql/data
 
 volumes:
-  data:
+  data_pg:

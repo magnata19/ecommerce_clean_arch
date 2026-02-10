@@ -1,0 +1,35 @@
+### GET request to example server
+POST http://localhost:8080/api/v1/users/create
+Content-Type: application/json
+
+{
+  "name": "Davidson",
+  "email": "deh@email.com",
+  "password": "1234567"
+}
+
+###
+
+###
+POST http://localhost:8080/api/v1/auth/login
+Content-Type: application/json
+
+{
+  "email": "deh@email.com",
+  "password": "1234567"
+}
+###
+
+###
+
+POST http://localhost:8080/api/v1/stores/create
+Content-Type: application/json
+
+{
+  "name": "Billabong",
+  "description": "Loja para equipamentos e roupas de surf",
+  "cnpj": "56174302000130",
+  "owner": 13
+}
+
+###

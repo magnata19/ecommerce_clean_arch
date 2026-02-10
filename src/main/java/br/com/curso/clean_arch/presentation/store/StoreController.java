@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/stores")
+@RequestMapping("/api/v1/stores")
 public class StoreController {
 
     private final CreateStoreUseCase createStoreUseCase;
